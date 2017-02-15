@@ -48,6 +48,8 @@ func (h Handler) accept(conn net.Conn, s *Storage) {
 		case "exit":
 			conn.Close()
 			return
+		default:
+			fmt.Fprintln(conn, "unknown command")
 		}
 	}
 }
